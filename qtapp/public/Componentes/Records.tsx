@@ -3,7 +3,7 @@ import { User } from '../Interfaces/IForm'
 import { obtenerUsuarios } from '../Firebase/Promises'
 import { Link } from 'react-router-dom'
 
-export const records = () => {
+export const Records = () => {
     const [user, setUser] = useState<User[]>([])
     useEffect(() => {
         obtenerUsuarios().then((listado) => {

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { actualizarUsuario, obtenerUsuario } from '../Firebase/Promises'
 import { User } from '../Interfaces/IForm'
 
-export const Actualizar = () => {
+export const Update = () => {
   const params = useParams()
   const [nombre, setNombre] = useState("")
   const [email, setEmail] = useState("")
@@ -81,6 +81,7 @@ export const Actualizar = () => {
         onChange={(e) => setEdad(e.target.value)}
         value={edad}
       /><br />
+      <label></label>
 
       <button type='button' onClick={actualizar}>Actualizar</button>
     </form>
