@@ -1,15 +1,15 @@
 import React from 'react'
 
-interface Props{
-    nombre:String|number,
-    mail:string,
-    edad?:number,
-    seleccion:string
+interface Props {
+  nombre: String | number,
+  email: string,
+  edad?: number,
+  seleccion: string
 }
 
 
-export const Login = () => {
+export const Saludo = (props:Props) => {
   return (
-    <div>Login</div>
+    <div>Saludo {props.nombre} {props.email}</div>
   )
 }
