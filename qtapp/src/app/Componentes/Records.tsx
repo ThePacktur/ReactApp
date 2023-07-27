@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { User } from '../Interfaces/IForm'
 import { obtenerUsuarios } from '../Firebase/Promises'
 import { Link } from 'react-router-dom'
+import { User } from '../Interfaces/IForm'
 
 export const Records = () => {
     const [user, setUser] = useState<User[]>([])

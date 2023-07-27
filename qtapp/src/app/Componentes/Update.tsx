@@ -1,17 +1,34 @@
-'use client'
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { actualizarUsuario, obtenerUsuario } from '../Firebase/Promises'
 import { User } from '../Interfaces/IForm'
-import { registrarUser } from '../Firebase/Promises'
 
-export const Form = () => {
+
+export const Update = () => {
+  const params = useParams()
   const [nombre, setNombre] = useState("")
   const [email, setEmail] = useState("")
   const [edad, setEdad] = useState("")
   const [errorNombre, setErrorNombre] = useState("")
+  const [idUsuario, setIdUsuario] = useState("")
+  useEffect(() => {
+    if (params.idUsuario != undefined) {
+      obtenerUsuario(params.idUsuario).then((v) => {
+        if (v != undefined && v.idUsuario != undefined) {
+          setNombre(v.nombre)
+          setEmail(v.email)
+          setEdad("" + v.edad)
+          setIdUsuario(v.idUsuario)
+        }
+      })
+
+    }
+    //promesas que recuperan el objeto en base a un id
+    //carguemos en cada estado su valor
+  }, [])
 
 
-
-  const registrar = () => {
+  const actualizar = () => {
 
     if (nombre.trim() == "") {
       setErrorNombre("No valen espacios en blanco")
@@ -25,7 +42,11 @@ export const Form = () => {
       email,
       edad: parseInt(edad)
     }
-    registrarUser(p)
+    //actualizar
+    actualizarUsuario(idUsuario, p).then(() => {
+      alert("Se actualizo con exito")
+    })
+    //registrarUsuario(p)
     console.log(nombre);
     console.log(email);
     console.log(edad);
@@ -61,8 +82,9 @@ export const Form = () => {
         onChange={(e) => setEdad(e.target.value)}
         value={edad}
       /><br />
+      <label></label>
 
-      <button type='button' onClick={registrar}>Registrar</button>
+      <button type='button' onClick={actualizar}>Actualizar</button>
     </form>
   )
 }
