@@ -10,7 +10,7 @@ export const AppRouter = () => {
   return (
     <Routes>
       <Route path='/*' element={<Login nombre={"Packtur"} />} />
-      <Route path='/formulario' element={<Form />} />
+      <Route path='/Formulario' element={<Form />} />
       <Route path='/mostrar' element={<Records />} />
       <Route path='/actualizar/:idUsuario' element={<Update />} />
     </Routes>

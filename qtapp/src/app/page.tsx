@@ -1,11 +1,12 @@
-'use Client'
+'use client'
 
+import Footer from "@/pages/layout/Footer";
+import { Header } from "@/pages/layout/Header";
+import { AppRouter } from "@/pages/router/AppRouter";
 //import Image from 'next/image'
 
 import { BrowserRouter } from "react-router-dom";
-import { Header } from "./layout/Header";
-import { AppRouter } from "./router/AppRouter";
-import { Footer } from "./layout/Footer";
+
 
 
 

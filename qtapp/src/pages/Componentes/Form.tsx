@@ -4,18 +4,19 @@ import React, { useEffect, useState } from 'react'
 import { registrarUser } from '../Firebase/Promises'
 import { User } from '../Interfaces/IForm'
 
+
 export const Form = () => {
   const [nombre, setNombre] = useState("")
   const [email, setEmail] = useState("")
   const [edad, setEdad] = useState("")
   const [errorNombre, setErrorNombre] = useState("")
-
+  const [seleccion, setSelect] = useState("")
 
 
   const registrar = () => {
 
     if (nombre.trim() == "") {
-      setErrorNombre("No valen espacios en blanco")
+      setErrorNombre("Espacios en blanco invalido.")
     } else {
       setNombre(nombre.trim())
     }
@@ -25,6 +26,8 @@ export const Form = () => {
       nombre,
       email,
       edad: parseInt(edad)
+      
+      
     }
     registrarUser(p)
     console.log(nombre);
@@ -61,7 +64,13 @@ export const Form = () => {
       <input type="number"
         onChange={(e) => setEdad(e.target.value)}
         value={edad}
-      /><br />
+      /><br />  <label >Password:</label><br/>
+      <input
+        type="password"
+        pattern="[a-z0-9]{1,15}"
+        title="Password should be digits (0 to 9) or alphabets (a to z)."
+      /> <br/>
+
 
       <button type='button' onClick={registrar}>Registrar</button>
     </form>

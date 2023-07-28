@@ -4,6 +4,7 @@ import { actualizarUsuario, obtenerUsuario } from '../Firebase/Promises'
 import { User } from '../Interfaces/IForm'
 
 
+
 export const Update = () => {
   const params = useParams()
   const [nombre, setNombre] = useState("")

@@ -1,0 +1,24 @@
+.container {
+
+  position: relative;
+
+  max-width: auto;
+
+  margin: auto;
+  padding: 1em 4em;
+  box-shadow: 0 0 20px rgb(6, 32, 65);
+  min-height: auto;
+  border-radius: 2px;
+  background: transparent;
+  background-image: -moz-linear-gradient(top, #eb94d0, #2079b0);
+  background-image: -ms-linear-gradient(top, #eb94d0, #2079b0);
+  background-image: -webkit-linear-gradient(top, #eb94d0, #2079b0);
+  background-image: -o-linear-gradient(top, #eb94d0, #2079b0);
+  background-image: linear-gradient(to bottom, #eb94d0, #2079b0);
+  backdrop-filter: blur(1em);
+  box-shadow: 0 0 30px rgba(19, 10, 41, 0.5);
+
+}
+.logo{
+  width: 300px;
+}

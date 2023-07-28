@@ -1,6 +1,7 @@
-import { User } from "../Interfaces/IForm";
+
 import { collection, addDoc, getDocs, doc, getDoc, updateDoc, deleteDoc } from "firebase/firestore";
 import { db } from "./FirebaseApp";
+import { User } from "../Interfaces/IForm";
 
 
 

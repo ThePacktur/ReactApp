@@ -3,6 +3,7 @@ import { obtenerUsuarios } from '../Firebase/Promises'
 import { Link } from 'react-router-dom'
 import { User } from '../Interfaces/IForm'
 
+
 export const Records = () => {
     const [user, setUser] = useState<User[]>([])
     useEffect(() => {
@@ -30,10 +31,10 @@ export const Records = () => {
     return (
         <table>
             <tr>
-                <th>Nombre</th>
-                <th>Email</th>
-                <th>Edad</th>
-                <th>Editar</th>
+                <th>Nombre  | </th>
+                <th>Email  | </th>
+                <th>Edad  | </th>
+                <th>Editar  | </th>
                 <th>Eliminar</th>
             </tr>
             {
