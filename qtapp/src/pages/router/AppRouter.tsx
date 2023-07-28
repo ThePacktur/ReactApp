@@ -9,7 +9,7 @@ import { Update } from '../Componentes/Update'
 export const AppRouter = () => {
   return (
     <Routes>
-      <Route path='/*' element={<Login nombre={"Packtur"} />} />
+      <Route path='/*' element={<Login nombre={"Saturina"} />} />
       <Route path='/Formulario' element={<Form />} />
       <Route path='/mostrar' element={<Records />} />
       <Route path='/actualizar/:idUsuario' element={<Update />} />
